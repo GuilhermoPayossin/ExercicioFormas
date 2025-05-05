@@ -10,15 +10,10 @@ public class Main {
         lista.add(new Cilindro(5, -5, 4, 6));
 
         for (Forma f : lista) {
-            if (f instanceof Circulo) {
-                System.out.println("Ciruculo: ");
-            } else {
-                System.out.println("Cilindro: ");
-            }
-            System.out.println(f);
+            System.out.println(f.getClass().getSimpleName());
             System.out.println("Área: " + f.calcularArea());
-            if (f instanceof Cilindro) {
-                System.out.println("Volume: " + ((Cilindro) f).calcularVolume());
+            if (f instanceof IVolume) {
+                System.out.println("Volume: " + ((IVolume) f).calcularVolume());
             }
             System.out.println("--------------------------------------------------------------");
         }
